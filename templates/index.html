@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holi... SHIT</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+        integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='holi.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Holi... SHIT!!!</h1>
+    </header>
+    <div id="main">
+        <h3>So you've picked a date, selected your destination<br>and planned the perfect holiday but... OOH SHIT!<br>
+            No one told you it's Columbus day in OHIO?!?<br>
+            Now what will you do?</h3>
+    </div>
+    <div id="search">
+        <form id="src_form" class="col" action="/" method="GET">
+            <div class="input">
+                <label class="dates">Pick the day you are there:</label>
+                <input class="departure-date" id="departure" name="departure" type="date" tabindex=0 autofocus min="2012-10-11" max="2111-01-01">
+            </div>
+            <div class="input">
+                <label class="dates">Pick your destination:</label>
+                <input list="states" id="country" name="country" type="text" placeholder="Pick country" tabindex=0>
+                <datalist id="states">
+                    <option value="USA">
+                    <option value="ISR">
+                    <option value="RUS">
+                    <option value="JPN">
+                </datalist>
+            </div>
+            <div class="btn_div">
+                <button type="submit" class="btn btn-warning btn-lg">So, will it be a<br>Holiday OR
+                    Holishit?<br>>>></button>
+            </div>
+        </form>
+    </div>
+    <h2>We say... {{ status }}</h2>
+    <div id="results">
+        <h3>{{ verdict }}</h3>
+        <h4>{{ holishit_result }}</h4>
+    </div>
+
+</body>
+
+</html>
