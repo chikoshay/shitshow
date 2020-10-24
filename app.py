@@ -78,7 +78,7 @@ def shit():
             headline_status = "Choose date"
             what_is_happaning = "Choose country"
             what_to_do = "Choose Life"
-    return render_template("index.html",
+    return render_template("index.j2",
                            status=headline_status,
                            verdict=what_is_happaning,
                            holishit_result=what_to_do,
