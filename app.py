@@ -1,5 +1,7 @@
-from flask import Flask, request, render_template
 import os
+
+from flask import Flask, render_template, request
+
 import holidayapi
 
 
@@ -12,9 +14,10 @@ hapi = holidayapi.v1(KEY)
 def get_api(month, day, country):
     parameters = {
         'country': country,
-        'year':    2019,  # since it's a free version i've added the only available year
-        'month':    month,
-        'day':      day,
+        'year': 2019,
+        # since it's a free version i've added the only available year
+        'month': month,
+        'day': day,
     }
 
     holidays = hapi.holidays(parameters)
@@ -46,7 +49,7 @@ def wordsmith(event, country):
         headline_status = "DAY!"
         verdict = "I LOVE WHEN A GOOD PLAN COMES TOGETHER"
         holishit_result = "Lucky you! For the locals it's just a dull day!"
-    elif event == None:
+    elif event is None:
         headline_status = "Huston, we have a problem"
         verdict = "Our engin is broken"
         holishit_result = "It's probably a KEY issue. come back later"
@@ -83,4 +86,4 @@ def shit():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
